@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
-// const mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // const routeCourses = require("./routes/courses");
 
@@ -43,11 +43,11 @@ app.get("/api/courses", (req, res) => {
 });
 
 // Connect to Database
-// mongoose.connect(
-//   "mongodb+srv://Jeyavarthini:Princess03@cluster.rfgjhqq.mongodb.net/",
-//   { useNewUrlParser: true, useUnifiedTopology: true },
-//   () => console.log("connected to database!")
-// );
+mongoose.connect(
+  "mongodb+srv://Jeyavarthini:Princess03@cluster.rfgjhqq.mongodb.net/?retryWrites=true&w=majority",
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  () => console.log("connected to database!")
+);
 
 //app.listen(5000, () => console.log("Listening on port 5000"));
 
